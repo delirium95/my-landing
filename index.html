@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2f0e9" />
+    <meta
+      name="description"
+      content="Turn messy files into a clean, client-ready handoff. Fix filenames, catch exact duplicates, and download one tidy ZIP — privately in your browser."
+    />
+    <meta property="og:title" content="Sendset — make every file ready to send" />
+    <meta
+      property="og:description"
+      content="A 60-second pre-send check for client files. No uploads, no account, no awkward filenames."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sendset — make every file ready to send</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#tool">Skip to the tool</a>
+
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Sendset home">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i><i></i><i></i><b></b>
+        </span>
+        <span>SENDSET</span>
+      </a>
+      <nav>
+        <a href="#story">Why it exists</a>
+        <a href="#privacy">Privacy</a>
+        <a class="nav-cta" href="#tool">Clean my files <span aria-hidden="true">↘</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow reveal"><span></span> A 60-second file handoff</div>
+          <h1 id="hero-title" class="reveal reveal-delay-1">
+            Your files are ready.<br />
+            <em>Their names aren’t.</em>
+          </h1>
+          <p class="hero-lede reveal reveal-delay-2">
+            Turn <code>FINAL_v7 (2)</code>, mystery IDs, and accidental copies into one clean,
+            client-ready package — before you hit send.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a class="button button-dark" href="#tool">Make a clean send <span aria-hidden="true">↓</span></a>
+            <button class="text-button" type="button" data-demo-trigger>Or try the 20-second demo</button>
+          </div>
+          <div class="origin-note reveal reveal-delay-4">
+            <span class="origin-number">98</span>
+            <p>
+              files with copy markers in my own 499-file Downloads folder.
+              <a href="#story">That’s why I built this.</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="tool-wrap reveal reveal-delay-2" id="tool">
+          <div class="app-window" data-app-window>
+            <div class="app-topbar">
+              <div class="traffic-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="app-title">New handoff</span>
+              <div class="local-badge"><span></span> Local only</div>
+            </div>
+
+            <div class="app-stage" data-empty-state>
+              <div class="dropzone" data-dropzone tabindex="0" role="button" aria-describedby="drop-help">
+                <input data-file-input type="file" multiple hidden />
+                <div class="drop-illustration" aria-hidden="true">
+                  <span class="paper paper-back">logo__NEW.png</span>
+                  <span class="paper paper-mid">brief_final(2).docx</span>
+                  <span class="paper paper-front"><i>+</i></span>
+                </div>
+                <p class="drop-title">Drop the files you’re about to send</p>
+                <p class="drop-help" id="drop-help">or choose them from your device</p>
+                <button class="button button-lime" type="button" data-choose-files>Choose files</button>
+              </div>
+              <button class="demo-link" type="button" data-demo-trigger>
+                No files handy? <strong>Load a messy demo</strong> <span aria-hidden="true">→</span>
+              </button>
+              <div class="privacy-line">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.5 8V6.5a3.5 3.5 0 1 1 7 0V8m-8 0h9a1 1 0 0 1 1 1v6.5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><path d="M10 11v2.5"/></svg>
+                Files stay on this device. Always.
+              </div>
+            </div>
+
+            <div class="app-stage processing-stage" data-processing-state hidden aria-live="polite">
+              <div class="scan-visual" aria-hidden="true">
+                <div class="scan-file"><span></span><span></span><span></span><i></i></div>
+                <div class="scan-beam"></div>
+              </div>
+              <p class="processing-kicker">PRE-SEND CHECK</p>
+              <h2 data-processing-title>Reading filenames…</h2>
+              <p data-processing-detail>Nothing is being uploaded.</p>
+              <div class="progress-track"><i data-progress-bar></i></div>
+            </div>
+
+            <div class="review-stage" data-review-state hidden>
+              <div class="review-head">
+                <div>
+                  <p class="micro-label">HANDOFF CHECK</p>
+                  <h2><span data-ready-count>0 files</span> ready to send</h2>
+                </div>
+                <button class="icon-button" type="button" data-reset aria-label="Start over" title="Start over">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3m-8 0 1 13h8l1-13M10 11v5m4-5v5"/></svg>
+                </button>
+              </div>
+
+              <div class="score-strip">
+                <div class="score-ring" data-score-ring><strong data-score>100</strong><span>/100</span></div>
+                <div class="score-copy">
+                  <strong data-score-label>Looking sharp</strong>
+                  <span data-score-detail>No obvious handoff issues.</span>
+                </div>
+                <div class="score-stats">
+                  <span><strong data-fix-count>0</strong> cleaned</span>
+                  <span><strong data-duplicate-count>0</strong> duplicates skipped</span>
+                </div>
+              </div>
+
+              <div class="format-row" aria-label="Filename style">
+                <span>Filename style</span>
+                <div class="segmented-control" data-format-control>
+                  <button class="active" type="button" data-format="readable" aria-pressed="true">Readable</button>
+                  <button type="button" data-format="web" aria-pressed="false">Web-safe</button>
+                  <button type="button" data-format="minimal" aria-pressed="false">Minimal fix</button>
+                </div>
+              </div>
+
+              <div class="file-list-head"><span>Include</span><span>Original</span><span>Ready to send</span></div>
+              <div class="file-list" data-file-list></div>
+
+              <div class="review-footer">
+                <div class="package-summary">
+                  <span class="zip-icon">ZIP</span>
+                  <p><strong data-package-name>sendset-handoff.zip</strong><span data-package-meta>0 files</span></p>
+                </div>
+                <button class="button button-dark download-button" type="button" data-download>
+                  <span data-download-label>Download clean set</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5M4 15.5h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="tool-caption"><span>01</span> Add files <i></i><span>02</span> Review <i></i><span>03</span> Download one clean ZIP</p>
+        </div>
+      </section>
+
+      <section class="mess-strip" aria-label="Examples of filenames Sendset cleans">
+        <div class="mess-track">
+          <span>proposal_FINAL_final_v7 (2).pdf</span><i>→</i><strong>Proposal Final V7.pdf</strong><b>•</b>
+          <span>ЛОГО__НОВЕ___копія.png</span><i>→</i><strong>Лого Нове.png</strong><b>•</b>
+          <span>client-notes copy copy.docx</span><i>→</i><strong>Client Notes.docx</strong><b>•</b>
+          <span>proposal_FINAL_final_v7 (2).pdf</span><i>→</i><strong>Proposal Final V7.pdf</strong><b>•</b>
+        </div>
+      </section>
+
+      <section class="story shell" id="story" aria-labelledby="story-title">
+        <div class="section-label"><span>THE SMALL, REAL PROBLEM</span><i></i></div>
+        <div class="story-grid">
+          <div>
+            <h2 id="story-title">The work can be excellent.<br /><em>The handoff should look it.</em></h2>
+          </div>
+          <div class="story-body">
+            <p>
+              Client files arrive through Telegram, email, drives, and five rounds of feedback. By delivery day,
+              their names tell the whole messy story.
+            </p>
+            <p>
+              Sendset removes that last awkward ten minutes: it cleans filename noise, catches exact copies,
+              and packages only what you meant to send.
+            </p>
+          </div>
+        </div>
+
+        <div class="before-after-card">
+          <div class="ba-column before-column">
+            <div class="ba-heading"><span>BEFORE</span><strong>Downloads, 17:42</strong></div>
+            <ul>
+              <li><span class="file-type pdf">PDF</span><p>Q3_strategy_FINAL_v4 (2).pdf<small>12.4 MB</small></p><i class="status-dot bad"></i></li>
+              <li><span class="file-type img">PNG</span><p>Copy of logo_NEW__.png<small>1.8 MB</small></p><i class="status-dot bad"></i></li>
+              <li><span class="file-type doc">DOC</span><p>notes-for-client copy.docx<small>245 KB</small></p><i class="status-dot bad"></i></li>
+              <li class="duplicate-row"><span class="file-type pdf">PDF</span><p>Q3_strategy_FINAL_v4.pdf<small>Exact duplicate</small></p><i class="status-dot warn"></i></li>
+            </ul>
+          </div>
+          <div class="ba-arrow" aria-hidden="true"><span>→</span><small>12 sec</small></div>
+          <div class="ba-column after-column">
+            <div class="ba-heading"><span>AFTER</span><strong>Client handoff</strong></div>
+            <ul>
+              <li><span class="file-type pdf">PDF</span><p>Q3 Strategy Final V4.pdf<small>12.4 MB</small></p><i class="status-dot good">✓</i></li>
+              <li><span class="file-type img">PNG</span><p>Logo New.png<small>1.8 MB</small></p><i class="status-dot good">✓</i></li>
+              <li><span class="file-type doc">DOC</span><p>Notes For Client.docx<small>245 KB</small></p><i class="status-dot good">✓</i></li>
+              <li class="manifest-row"><span class="file-type txt">TXT</span><p>sendset-manifest.txt<small>Included automatically</small></p><i class="status-dot good">✓</i></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles shell" id="privacy" aria-labelledby="principles-title">
+        <div class="section-label light"><span>BUILT FOR THE MOMENT BEFORE SEND</span><i></i></div>
+        <div class="principles-intro">
+          <h2 id="principles-title">Tiny tool.<br /><em>Firm opinions.</em></h2>
+          <p>Sendset does one job, on purpose. No workspace to maintain. No library to organize. No new habit to learn.</p>
+        </div>
+        <div class="principle-grid">
+          <article>
+            <span class="principle-number">01</span>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 22v-6a9 9 0 0 1 18 0v6m-22 0h26v19H11z"/><path d="M24 29v6"/></svg>
+            <h3>Private by architecture</h3>
+            <p>Your files are processed inside your browser. There is no upload step and no file storage.</p>
+          </article>
+          <article>
+            <span class="principle-number">02</span>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m12 25 8 8 16-18"/><path d="M40 24a16 16 0 1 1-8-13.9"/></svg>
+            <h3>Review before magic</h3>
+            <p>Every rename is visible and editable. Sendset suggests; you stay in control of the handoff.</p>
+          </article>
+          <article>
+            <span class="principle-number">03</span>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 14h26v24H11z"/><path d="M17 10h14v8H17zM18 25h12m-12 6h8"/></svg>
+            <h3>One useful artifact</h3>
+            <p>Get a clean ZIP plus a plain-text manifest, so recipients can see exactly what changed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta shell" aria-labelledby="cta-title">
+        <p class="micro-label">THE LAST 60 SECONDS OF GOOD WORK</p>
+        <h2 id="cta-title">Make the files match<br />the quality of the work.</h2>
+        <button class="button button-lime button-large" type="button" data-scroll-tool>
+          Clean a set now <span aria-hidden="true">↗</span>
+        </button>
+        <p>No account. No upload. No “final_final_really-final”.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span>SENDSET</span></a>
+      <p>Built because “(2)” is not a versioning system.</p>
+      <span>© 2026 · Files stay yours</span>
+    </footer>
+
+    <div class="toast" data-toast role="status" aria-live="polite" hidden>
+      <span class="toast-icon">✓</span>
+      <p><strong data-toast-title>Your clean set is ready</strong><span data-toast-copy>The ZIP was created on this device.</span></p>
+      <button type="button" data-toast-close aria-label="Dismiss">×</button>
+    </div>
+
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>
