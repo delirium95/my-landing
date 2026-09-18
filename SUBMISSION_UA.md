@@ -1,5 +1,3 @@
-# Sendset — тестове завдання AI-First Product Builder
-
 ## Посилання
 
 - **Live product:** `LIVE_URL`
